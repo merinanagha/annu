@@ -16,13 +16,15 @@
       MIXPANEL_CUSTOM_LIB_URL:"file:"===f.location.protocol&&"//cdn.mxpnl.com/libs/mixpanel-2-latest.min.js".match(/^\/\//)?"https://cdn.mxpnl.com/libs/mixpanel-2-latest.min.js":"//cdn.mxpnl.com/libs/mixpanel-2-latest.min.js";g=f.getElementsByTagName("script")[0];g.parentNode.insertBefore(e,g)}})(document,window.mixpanel||[]);
 
       mixpanel.init('836925d88d77f5b85aa3741e59f0f3d9');
-      mixpanel.track('$onesignal_user_id'
+      mixpanel.track('Sign Up' , {
+                     '$onesignal_user_id' : '17a488bb56a78-05c2789e3da28c-3c700c58-1fa400-17a488bb56b7f0'
       });
       import mixpanel from 'mixpanel-browser';
       // or with require() syntax:
       // const mixpanel = require('mixpanel-browser');
       mixpanel.init('836925d88d77f5b85aa3741e59f0f3d9');
-      mixpanel.track('$onesignal_user_id'
+      mixpanel.track('Sign Up' , {
+        '$onesignal_user_id' : '17a488bb56a78-05c2789e3da28c-3c700c58-1fa400-17a488bb56b7f0'
       });
       let distinct_id = "";
       mixpanel.init('836925d88d77f5b85aa3741e59f0f3d9', {
