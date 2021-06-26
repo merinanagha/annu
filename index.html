@@ -51,8 +51,16 @@
         });
 });
     </script>
+    <script>
+      let myCustomUniqueUserId = "something from my backend server";
+
+      OneSignal.push(function() {
+        OneSignal.setExternalUserId(myCustomUniqueUserId);
+      });
+    </script>   
   </head>
   <body>
     <p>Hello June</p>
+
   </body>
 </html
