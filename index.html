@@ -20,6 +20,28 @@
         'source': "Pat's affiliate site",
         'Opted out of email': true,
       });
+      let distinct_id = "";
+      mixpanel.init('836925d88d77f5b85aa3741e59f0f3d9', {
+          loaded: function(mixpanel) {
+              distinct_id = mixpanel.get_distinct_id();
+          }
+      });
+      //Set the OneSignal External User ID to Mixpanel Distinct Id
+      OneSignal.push(function() {
+        // Check if the current site visitor is subscribed (no player id is created until the user subscribes to push
+        OneSignal.isPushNotificationsEnabled(function(isEnabled) {
+          if (isEnabled) {
+            console.log("Push notifications are enabled!");
+            OneSignal.setExternalUserId(distinct_id);
+            //Set Mixpanel OneSignal User Id property to Distinct Id or any User Id
+            mixpanel.people.set({
+              $onesignal_user_id: distinct_id
+            });
+          } else {
+            console.log("Push notifications are not enabled yet.");   
+          }
+        });
+});
     </script>
   </head>
   <body>
