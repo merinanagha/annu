@@ -18,6 +18,12 @@
       mixpanel.init('836925d88d77f5b85aa3741e59f0f3d9');
       mixpanel.track('$onesignal_user_id'
       });
+      import mixpanel from 'mixpanel-browser';
+      // or with require() syntax:
+      // const mixpanel = require('mixpanel-browser');
+      mixpanel.init('836925d88d77f5b85aa3741e59f0f3d9');
+      mixpanel.track('$onesignal_user_id'
+      });
       let distinct_id = "";
       mixpanel.init('836925d88d77f5b85aa3741e59f0f3d9', {
           loaded: function(mixpanel) {
