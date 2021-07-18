@@ -7,23 +7,6 @@
       OneSignal.push(function() {
         OneSignal.init({
           appId: "fca768ca-9f2f-4582-a530-5102d5299203",
-          let distinct_id = "";
-          mixpanel.init('YOUR PROJECT TOKEN', {
-              loaded: function(mixpanel) {
-                  distinct_id = mixpanel.get_distinct_id();
-              }
-          });
-          //Set the OneSignal External User ID to Mixpanel Distinct Id
-          OneSignal.push(function() {
-            OneSignal.setExternalUserId(distinct_id);
-            //Set Mixpanel OneSignal User Id property to Distinct Id or any User Id
-            mixpanel.people.set({
-              $onesignal_user_id: distinct_id
-            });
-          });
-        });
-      });
-      
   </head>
   <body>
     <p>Hello June</p>
