@@ -7,9 +7,26 @@
       OneSignal.push(function() {
         OneSignal.init({
           appId: "fca768ca-9f2f-4582-a530-5102d5299203",
+        });
+      });
+    </script>
+    <script>
+      let distinct_id = "";
+      mixpanel.init('YOUR PROJECT TOKEN', {
+        loaded: function(mixpanel) {
+          distinct_id = mixpanel.get_distinct_id();
+       }
+      });
+      OneSignal.push(function() {
+        OneSignal.setExternalUserId(distinct_id);
+         mixpanel.people.set({
+          $onesignal_user_id: distinct_id
+         });
+      });
+    </script>
   </head>
   <body>
     <p>Hello June</p>
     <p>add smthng</p>
   </body>
-</html
+</html>
